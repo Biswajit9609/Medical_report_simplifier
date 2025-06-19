@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import 'dotenv/config'
 import { GoogleGenAI } from "@google/genai";
 
 const app = express();

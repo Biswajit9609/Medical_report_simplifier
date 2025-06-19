@@ -3,14 +3,16 @@
     "@google/genai": "^1.5.1",
     "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.5",
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
   },
   "name": "exp",
   "version": "1.0.0",
   "main": "script.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
