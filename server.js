@@ -43,11 +43,11 @@ the response should be in markdown format.`,
       caption: result.candidates?.[0]?.content?.parts?.[0]?.text || "No caption generated"
     });
   } catch (err) {
-    console.error(err);
+    console.error(`error generating caption: ${err.message}`);
     res.status(500).json({ error: "Failed to generate caption." });
   }
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server started on http://localhost:3000");
 });
