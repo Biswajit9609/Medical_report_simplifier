@@ -1,0 +1,8 @@
+{
+  "name": "medical-report-lambda",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^1.5.1"
+  }
+}

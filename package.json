@@ -1,22 +1,47 @@
 {
-  "dependencies": {
-    "@google/genai": "^1.5.1",
-    "@google/generative-ai": "^0.24.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10"
-  },
-  "name": "exp",
+  "name": "medical-report-assistant",
   "version": "1.0.0",
-  "main": "script.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "vercel-build": "npm run build",
     "start": "node server.js"
   },
-  "keywords": [],
+  "dependencies": {
+    "@google/genai": "^1.5.1",
+    "cors": "^2.8.5",
+    "dompurify": "^3.0.3",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "lucide-react": "^0.263.1",
+    "marked": "^5.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.3",
+    "concurrently": "^8.2.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^3.1.10",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "keywords": [
+    "medical",
+    "report",
+    "ai",
+    "analysis"
+  ],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "AI-powered medical report analysis and simplification"
 }

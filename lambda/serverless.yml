@@ -1,0 +1,25 @@
+service: medical-report-analyzer
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  memorySize: 512
+  timeout: 30
+  environment:
+    GOOGLE_GENAI_API_KEY: ${env:GOOGLE_GENAI_API_KEY}
+
+functions:
+  analyzeReport:
+    handler: index.handler
+    events:
+      - http:
+          path: caption
+          method: post
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Requested-With
+            allowCredentials: false
+
